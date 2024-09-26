@@ -17,10 +17,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads')); // Serve uploaded files
 
+//mongodb+srv://pandeyji9304:1234567890Ri%40@tomato.4c5lp.mongodb.net/?retryWrites=true&w=majority&appName=tomato
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/food_ordering', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/food_ordering')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
+
 
 // Ensure uploads directory exists
 const uploadDir = 'uploads';
